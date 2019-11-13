@@ -72,8 +72,11 @@ export function newTweet() {
     const $root = $('#root');
     $root.html(' ');
     let tweeter = '';
+    tweeter+= `<div id="titleBlock">`;
+    tweeter+=`<div id="postTitle">Welcome to Tw33ter </div>`;
     tweeter += `<input id = "inp" type = "text">`;
-    tweeter += `<button type="button" id="postt"> Post </button>`;
+    tweeter += `<button type="button" id="postt"> Post? </button>`;
+    tweeter+=`</div>`
     $root.append(tweeter);
 
 
@@ -149,8 +152,7 @@ export async function reTweet(c,m) {
         data: {
             "type": "retweet",
             "parent": z,
-            "body": textinbox +c + m 
-        },
+            "body": `<div> ${textinbox}</div>`+`</div>`+"<div>Retweeted From: " + c + "</div>"+`<div> ${m}</div>`        },
     });
    // renderTweeter();
 }
